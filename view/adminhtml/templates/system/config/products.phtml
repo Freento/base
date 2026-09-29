@@ -1,0 +1,47 @@
+<?php
+/**
+ * @var \Freento\Base\Block\Adminhtml\System\Config\Products $block
+ * @var \Magento\Framework\Escaper $escaper
+ */
+$modules = $block->getModules();
+?>
+<div class="freento-base-products">
+    <?php if (empty($modules)): ?>
+        <p class="freento-base-products-empty">
+            <?= $escaper->escapeHtml(__('No Freento modules installed via Composer were found on this store.')) ?>
+        </p>
+    <?php else: ?>
+        <table class="admin__table-secondary freento-base-products-table">
+            <thead>
+                <tr>
+                    <th><?= $escaper->escapeHtml(__('Product')) ?></th>
+                    <th><?= $escaper->escapeHtml(__('Version')) ?></th>
+                </tr>
+            </thead>
+            <tbody>
+                <?php foreach ($modules as $module): ?>
+                    <tr>
+                        <td><?= $escaper->escapeHtml($module['name']) ?></td>
+                        <td>
+                            <?= $escaper->escapeHtml($module['version']) ?>
+                            <?php if (!empty($module['has_update'])): ?>
+                                <span class="freento-base-products-update">
+                                    &rarr;
+                                    <?php if (!empty($module['url'])): ?>
+                                        <a href="<?= $escaper->escapeUrl($module['url']) ?>"
+                                           target="_blank"
+                                           rel="noopener noreferrer">
+                                            <?= $escaper->escapeHtml($module['latest_version']) ?>
+                                        </a>
+                                    <?php else: ?>
+                                        <?= $escaper->escapeHtml($module['latest_version']) ?>
+                                    <?php endif; ?>
+                                </span>
+                            <?php endif; ?>
+                        </td>
+                    </tr>
+                <?php endforeach; ?>
+            </tbody>
+        </table>
+    <?php endif; ?>
+</div>

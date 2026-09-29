@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Store:etc/config.xsd">
+    <default>
+        <freento_base>
+            <feeds>
+                <!--
+                    For local development/testing override these values with a local domain,
+                    e.g. via app/etc/env.php or a local <default> config in a dev-only module.
+                -->
+                <module_list_url>https://freento.com/api/v1/get-public-module-list.php</module_list_url>
+                <notifications_url>https://freento.com/public-base-notifications</notifications_url>
+                <github_url>https://github.com/Freento</github_url>
+            </feeds>
+        </freento_base>
+    </default>
+</config>

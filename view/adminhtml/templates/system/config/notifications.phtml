@@ -1,0 +1,11 @@
+<?php
+/**
+ * @var \Freento\Base\Block\Adminhtml\System\Config\Notifications $block
+ */
+$content = $block->getContent();
+?>
+<?php if ($content !== ''): ?>
+    <div class="freento-base-notifications">
+        <?= /* @noEscape */ $content ?>
+    </div>
+<?php endif; ?>

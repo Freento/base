@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Backend:etc/menu.xsd">
+    <menu>
+        <add id="Freento_Base::freento_base"
+             title="Freento"
+             translate="title"
+             module="Freento_Base"
+             sortOrder="60"
+             resource="Freento_Base::freento_base"/>
+        <add id="Freento_Base::products_notifications"
+             title="Products &amp; Notifications"
+             translate="title"
+             module="Freento_Base"
+             sortOrder="1000"
+             parent="Freento_Base::freento_base"
+             action="adminhtml/system_config/edit/section/freento_base"
+             resource="Freento_Base::base_config"/>
+    </menu>
+</config>

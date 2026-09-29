@@ -1,0 +1,68 @@
+//
+//  Freento Base System Configuration
+//  ______________________________________________
+
+//
+//  Variables
+//  ----------------------------------------------
+
+@freento-base__border-color: #e3e3e3;
+@freento-base__accent-color: #e05600;
+@freento-base__muted-color: #6d6d6d;
+@freento-base-promo-background-color: #f4f4f4;
+
+//
+//  Common
+//  ----------------------------------------------
+
+& when (@media-common = true) {
+    .freento-base-products-table {
+        border-collapse: collapse;
+        width: 100%;
+    }
+
+    //  Must outweigh the core accordion form-inline config td padding (three classes), hence four classes here
+    .accordion .form-inline .config .freento-base-products-table {
+        td {
+            border-bottom: 1px solid @freento-base__border-color;
+            padding: 10px 12px;
+            text-align: left;
+        }
+    }
+
+    .freento-base-products-update {
+        color: @freento-base__accent-color;
+        font-weight: 600;
+        margin-left: 6px;
+    }
+
+    .freento-base-products-empty {
+        color: @freento-base__muted-color;
+    }
+
+    .freento-base-recommended-list {
+        list-style: none;
+        margin: 0 0 20px;
+        padding: 0;
+    }
+
+    .freento-base-recommended-item {
+        border-bottom: 1px solid @freento-base__border-color;
+        padding: 10px 0;
+
+        p {
+            color: @freento-base__muted-color;
+            margin: 4px 0 0;
+        }
+    }
+
+    .freento-base-recommended-promo {
+        background: @freento-base-promo-background-color;
+        border-radius: 4px;
+        padding: 12px 16px;
+    }
+
+    .freento-base-notifications {
+        max-width: 100%;
+    }
+}

@@ -1,0 +1,42 @@
+<?php
+/**
+ * @var \Freento\Base\Block\Adminhtml\System\Config\Recommended $block
+ * @var \Magento\Framework\Escaper $escaper
+ */
+$modules = $block->getModules();
+$githubUrl = $block->getGithubUrl();
+?>
+<div class="freento-base-recommended">
+    <?php if (!empty($modules)): ?>
+        <ul class="freento-base-recommended-list">
+            <?php foreach ($modules as $module): ?>
+                <li class="freento-base-recommended-item">
+                    <strong>
+                        <?php if (!empty($module['url'])): ?>
+                            <a href="<?= $escaper->escapeUrl($module['url']) ?>"
+                               target="_blank"
+                               rel="noopener noreferrer">
+                                <?= $escaper->escapeHtml($module['title']) ?>
+                            </a>
+                        <?php else: ?>
+                            <?= $escaper->escapeHtml($module['title']) ?>
+                        <?php endif; ?>
+                    </strong>
+                    <?php if (!empty($module['description'])): ?>
+                        <p><?= $escaper->escapeHtml($module['description']) ?></p>
+                    <?php endif; ?>
+                </li>
+            <?php endforeach; ?>
+        </ul>
+    <?php endif; ?>
+    <div class="freento-base-recommended-promo">
+        <p>
+            <?= $escaper->escapeHtml(__('Check out all our Magento 2 modules.')) ?>
+            <?php if ($githubUrl): ?>
+                <a href="<?= $escaper->escapeUrl($githubUrl) ?>" target="_blank" rel="noopener noreferrer">
+                    <?= $escaper->escapeHtml(__('View on GitHub')) ?>
+                </a>
+            <?php endif; ?>
+        </p>
+    </div>
+</div>

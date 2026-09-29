@@ -1,0 +1,35 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Config:etc/system_file.xsd">
+    <system>
+        <tab id="freento" translate="label" sortOrder="1000">
+            <label>Freento</label>
+        </tab>
+        <section id="freento_base" translate="label" type="text" sortOrder="1000" showInDefault="1" showInWebsite="0" showInStore="0">
+            <label>Products &amp; Notifications</label>
+            <tab>freento</tab>
+            <resource>Freento_Base::base_config</resource>
+            <group id="products" translate="label" type="text" sortOrder="10" showInDefault="1" showInWebsite="0" showInStore="0">
+                <label>Products</label>
+                <field id="list" translate="label" type="label" sortOrder="10" showInDefault="1" showInWebsite="0" showInStore="0">
+                    <label/>
+                    <frontend_model>Freento\Base\Block\Adminhtml\System\Config\Products</frontend_model>
+                </field>
+            </group>
+            <group id="recommended" translate="label" type="text" sortOrder="20" showInDefault="1" showInWebsite="0" showInStore="0">
+                <label>Recommended for you</label>
+                <field id="list" translate="label" type="label" sortOrder="10" showInDefault="1" showInWebsite="0" showInStore="0">
+                    <label/>
+                    <frontend_model>Freento\Base\Block\Adminhtml\System\Config\Recommended</frontend_model>
+                </field>
+            </group>
+            <group id="notifications" translate="label" type="text" sortOrder="30" showInDefault="1" showInWebsite="0" showInStore="0">
+                <label>Notifications</label>
+                <field id="content" translate="label" type="label" sortOrder="10" showInDefault="1" showInWebsite="0" showInStore="0">
+                    <label/>
+                    <frontend_model>Freento\Base\Block\Adminhtml\System\Config\Notifications</frontend_model>
+                </field>
+            </group>
+        </section>
+    </system>
+</config>
