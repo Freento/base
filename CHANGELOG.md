@@ -1,5 +1,17 @@
 # Changelog
 
+## 1.0.1
+
+### Changes
+
+- **The configuration ACL resource is now easier to find in the role tree.** The
+  `Freento_Base::base_config` resource is titled "Freento - Products & Notifications" instead of
+  "Products & Notifications". In `System > Permissions > User Roles` the resource is listed under
+  `Stores > Settings > Configuration`, next to the configuration sections of every other module,
+  where the old title did not say which extension it belonged to.
+
+  The resource id did not change, so permissions already granted to roles are kept.
+
 ## 1.0.0
 
 First release. Freento_Base is the shared foundation for all Freento extensions: it provides the

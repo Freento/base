@@ -2,7 +2,7 @@
     "name": "freento/base",
     "description": "Base module for Freento extensions: shows installed Freento products with available updates, recommends free modules and displays admin notifications from freento.com.",
     "type": "magento2-module",
-    "version": "1.0.0",
+    "version": "1.0.1",
     "license": "MIT",
     "require": {
         "php": ">=8.1"
